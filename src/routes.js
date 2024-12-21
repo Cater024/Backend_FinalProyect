@@ -21,7 +21,7 @@ router.get("/productos", function (request, response) {
   page = parseInt(page)
   perPage = parseInt(perPage)
 
-  connection.query("SELECT * FROM productos ORDER BY id ASC LIMIT ?, ?", [(page - 1) * perPage, perPage],
+  connection.query("SELECT * FROM productos ORDER BY id DESC LIMIT ?, ?", [(page - 1) * perPage, perPage],
     function (error, result) {
     if (error) {
       console.log("Error fetching productos", error)
